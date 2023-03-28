@@ -1,0 +1,9 @@
+label,time,error,precise
+clifford__clifford,12.674094200134277,,1.0
+clifford_t__clifford,11.097301959991455,,1.0
+clifford_t__cx_t,18.44173812866211,,1.0
+clifford_t__h_cz_rx,20.50636625289917,,1.0
+ccx_h__clifford,68.7735710144043,,1.0
+ccx_h__cx_t,76.60434007644653,,1.0
+rz_h__cx,11.799826622009277,,1.0
+measure_ghz,4.356896638870239,,1.0

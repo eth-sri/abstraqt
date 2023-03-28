@@ -1,0 +1,24 @@
+
+bv049; n=50; k=2
+Domain size: 1225
+The assertion is correct
+time spent in gamma:     14 seconds
+time spent in transform: 8 seconds
+time spent in alpha:     7 seconds
+Total:                   31 seconds
+
+ghz050; n=50; k=2
+Domain size: 1225
+The assertion is correct
+time spent in gamma:     14 seconds
+time spent in transform: 8 seconds
+time spent in alpha:     7 seconds
+Total:                   31 seconds
+
+grover8-zero; n=15; k=5
+Domain size: 6
+The assertion is correct
+time spent in gamma:     40 seconds
+time spent in transform: 39 seconds
+time spent in alpha:     0 seconds
+Total:                   80 seconds

@@ -1,0 +1,13 @@
+circuit: 2 qubits
+
+CNOT(0,1)
+
+
+// finish up
+H(0)
+H(1)
+H(2)
+
+assert state in span { |000> , |111> }
+
+measure 0..2

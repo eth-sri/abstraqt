@@ -1,0 +1,7 @@
+Experimental results for GHZ.
+All timings are in seconds.
+
+            Static analysis   Simulation    Simulation output
+15 qubits         0.5             85        0.7071 * |000000000000000> + -0.7071 * |111111111111111>
+16 qubits         0.6            367        0.7071 * |0000000000000000> + -0.7071 * |1111111111111111>
+

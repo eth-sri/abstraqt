@@ -1,0 +1,49 @@
+bash run-ghz.sh
+
+ghz050; k=2
+Domain size: 1225
+The assertion is correct
+time spent in gamma:     14 seconds
+time spent in transform: 8 seconds
+time spent in alpha:     7 seconds
+Total:                   31 seconds
+
+ghz100; k=2
+Domain size: 4950
+The assertion is correct
+time spent in gamma:     122 seconds
+time spent in transform: 72 seconds
+time spent in alpha:     61 seconds
+Total:                   255 seconds
+
+ghz150; k=2
+Domain size: 11175
+The assertion is correct
+time spent in gamma:     422 seconds
+time spent in transform: 254 seconds
+time spent in alpha:     206 seconds
+Total:                   882 seconds
+
+ghz200; k=2
+Domain size: 19900
+The assertion is correct
+time spent in gamma:     997 seconds
+time spent in transform: 604 seconds
+time spent in alpha:     485 seconds
+Total:                   2087 seconds
+
+ghz250; k=2
+Domain size: 31125
+The assertion is correct
+time spent in gamma:     1807 seconds
+time spent in transform: 1127 seconds
+time spent in alpha:     918 seconds
+Total:                   3854 seconds
+
+ghz300; k=2
+Domain size: 44850
+The assertion is correct
+time spent in gamma:     3138 seconds
+time spent in transform: 1902 seconds
+time spent in alpha:     1583 seconds
+Total:                   6624 seconds

@@ -1,0 +1,92 @@
+image:
+  python:3.8
+
+variables:
+
+  #########
+  # PATHS #
+  #########
+
+  CACHE: ".cache"
+  INSTALLED: "$CACHE/installed.txt"
+  # cache pip downloads to a local directory
+  PIP_CACHE_DIR: "$CACHE/pip"
+  # put abstraqt into a local directory
+  XDG_CACHE_HOME: "$CACHE"
+  # install virtualenv in a local directory
+  VENV: "$CACHE/venv"
+
+  APP_CACHE: "$CACHE/abstraqt"
+
+  REPORT: "$CACHE/report.xml"
+
+  KEEP_N_LOG_DIRECTORIES: '1'
+
+  ##########
+  # OTHERS #
+  ##########
+
+  # enable logging
+  DEFAULT_LOGGING: "VERBOSE"
+
+  # fetch submodules before the job
+  GIT_SUBMODULE_STRATEGY: recursive
+
+###########
+# CACHING #
+###########
+
+before_script:
+  - cat "$INSTALLED" 2>/dev/null || echo "Installing, as cache is not available according to file $INSTALLED in $(pwd)"
+  - cat "$INSTALLED" 2>/dev/null || python -m venv "$VENV"
+  - source "$VENV/bin/activate"    # load the virtualenv before every job
+  - cat "$INSTALLED" 2>/dev/null || bash ./install-pip.sh --fast
+  - touch "$INSTALLED"
+
+cache:
+  paths:
+    - "$CACHE"
+
+##########
+# STAGES #
+##########
+
+stages:
+  - install
+  - tests
+  - tests-long
+
+install:
+  stage: install
+  script:
+    - bash ./install-pip.sh --fast
+
+tests:
+  stage: tests
+  variables:
+    SKIP_EXPENSIVE_TESTS: "1"
+  script:
+    - pytest --import-mode=importlib --junit-xml=$REPORT
+  artifacts:
+    when: always
+    expire_in: 30 days
+    paths:
+      - "${APP_CACHE}/log/"
+    reports:
+      junit: $REPORT
+
+
+tests-long:
+  stage: tests-long
+  variables:
+    SKIP_EXPENSIVE_TESTS: "0"
+  script:
+    - pytest --import-mode=importlib --junit-xml=$REPORT
+  artifacts:
+    when: on_failure
+    expire_in: 30 days
+    paths:
+      - "${APP_CACHE}/log/"
+    reports:
+      junit: $REPORT
+

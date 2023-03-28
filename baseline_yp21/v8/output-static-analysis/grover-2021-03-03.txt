@@ -1,0 +1,81 @@
+
+grover4-zero; k=5
+Domain size: 2
+The assertion is correct
+time spent in gamma:     0 seconds
+time spent in transform: 0 seconds
+time spent in alpha:     0 seconds
+Total:                   2 seconds
+
+grover4-plus; k=5
+Domain size: 2
+The assertion is correct
+time spent in gamma:     0 seconds
+time spent in transform: 0 seconds
+time spent in alpha:     0 seconds
+Total:                   2 seconds
+
+grover8-zero; k=5
+Domain size: 6
+The assertion is correct
+time spent in gamma:     38 seconds
+time spent in transform: 38 seconds
+time spent in alpha:     0 seconds
+Total:                   78 seconds
+
+grover8-plus; k=5
+Domain size: 6
+The assertion is correct
+time spent in gamma:     39 seconds
+time spent in transform: 39 seconds
+time spent in alpha:     0 seconds
+Total:                   80 seconds
+
+grover16-zero; k=5
+Domain size: 14
+The assertion is correct
+time spent in gamma:     308 seconds
+time spent in transform: 307 seconds
+time spent in alpha:     3 seconds
+Total:                   619 seconds
+
+grover16-plus; k=5
+Domain size: 14
+The assertion is correct
+time spent in gamma:     305 seconds
+time spent in transform: 308 seconds
+time spent in alpha:     4 seconds
+Total:                   618 seconds
+
+grover32-zero; k=5
+Domain size: 30
+The assertion is correct
+time spent in gamma:     1671 seconds
+time spent in transform: 1679 seconds
+time spent in alpha:     18 seconds
+Total:                   3369 seconds
+
+grover32-plus; k=5
+Domain size: 30
+The assertion is correct
+time spent in gamma:     1614 seconds
+time spent in transform: 1660 seconds
+time spent in alpha:     19 seconds
+Total:                   3294 seconds
+
+grover64-zero; k=5
+Domain size: 62
+The assertion is correct
+time spent in gamma:     8088 seconds
+time spent in transform: 8217 seconds
+time spent in alpha:     78 seconds
+Total:                   16385 seconds
+
+grover64-plus; k=5
+Domain size: 62
+The assertion is correct
+time spent in gamma:     9557 seconds
+time spent in transform: 11083 seconds
+time spent in alpha:     96 seconds
+Total:                   20737 seconds
+

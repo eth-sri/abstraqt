@@ -1,0 +1,8 @@
+
+if [ ! -d "$VENV" ]; then
+    # if venv does not exist, create it
+    python -m venv "$VENV"
+fi
+
+# activate
+source "$VENV/bin/activate"

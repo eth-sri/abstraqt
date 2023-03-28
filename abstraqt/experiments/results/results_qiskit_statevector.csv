@@ -1,0 +1,9 @@
+label,time,error,precise
+clifford__clifford,26.012281894683838,OOM,
+clifford_t__clifford,28.231883764266968,OOM,
+clifford_t__cx_t,21.66603112220764,OOM,
+clifford_t__h_cz_rx,24.459141731262207,OOM,
+ccx_h__clifford,24.663828134536743,OOM,
+ccx_h__cx_t,23.60469913482666,OOM,
+rz_h__cx,5.754376649856567,OOM,
+measure_ghz,2.886274576187134,Unsupported operation,

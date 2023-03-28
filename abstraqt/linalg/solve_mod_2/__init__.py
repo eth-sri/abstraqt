@@ -1,0 +1,7 @@
+from .gaussian_elimination_mod_2 import solve_mod_2_gaussian_elimination, get_kernel_mod_2_gaussian_elimination
+from .gaussian_elimination_mod_2 import solve_mod_2_gaussian_elimination_packing, \
+    get_kernel_mod_2_gaussian_elimination_packing
+from .solve_mod_2_galois import solve_mod_2_full_galois, solve_mod_2_galois, get_kernel_mod_2_galois
+
+solve_mod_2 = solve_mod_2_gaussian_elimination_packing
+get_kernel_mod_2 = get_kernel_mod_2_gaussian_elimination_packing

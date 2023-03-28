@@ -1,0 +1,48 @@
+
+bv049; k=2
+Domain size: 1225
+The assertion is correct
+time spent in gamma:     14 seconds
+time spent in transform: 8 seconds
+time spent in alpha:     7 seconds
+Total:                   31 seconds
+
+bv099; k=2
+Domain size: 4950
+The assertion is correct
+time spent in gamma:     115 seconds
+time spent in transform: 69 seconds
+time spent in alpha:     56 seconds
+Total:                   241 seconds
+
+bv149; k=2
+Domain size: 11175
+The assertion is correct
+time spent in gamma:     383 seconds
+time spent in transform: 235 seconds
+time spent in alpha:     188 seconds
+Total:                   807 seconds
+
+bv199; k=2
+Domain size: 19900
+The assertion is correct
+time spent in gamma:     921 seconds
+time spent in transform: 566 seconds
+time spent in alpha:     450 seconds
+Total:                   1939 seconds
+
+bv249; k=2
+Domain size: 31125
+The assertion is correct
+time spent in gamma:     1821 seconds
+time spent in transform: 1146 seconds
+time spent in alpha:     891 seconds
+Total:                   3860 seconds
+
+bv299; k=2
+Domain size: 44850
+The assertion is correct
+time spent in gamma:     3150 seconds
+time spent in transform: 1929 seconds
+time spent in alpha:     1542 seconds
+Total:                   6623 seconds
