@@ -5,7 +5,7 @@ import numpy as np
 
 from abstraqt.abstract_interpretation.interfaces.best_transformers import best_transformer_from_concrete, \
     possible_concrete_outputs
-from abstraqt.utils.array.equality import filter_equal
+from abstraqt.utils.my_array.equality import filter_equal
 from abstraqt.utils.inspection.function_arguments import count_n_arguments
 from abstraqt.utils.inspection.operator_helper import get_operators
 from abstraqt.utils.iterator_helper import get_unique

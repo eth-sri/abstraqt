@@ -3,8 +3,8 @@ from typing import Sequence
 import numpy as np
 
 from abstraqt.abstract_interpretation.interfaces.best_transformers import add_best_transformer_to_class
-from abstraqt.utils.array.dimensions.representation_dimensions_wrapper import RepresentationDimensionsWrapper
-from abstraqt.utils.numpy.lift_to_numpy_array import lift_to_numpy_array
+from abstraqt.utils.my_array.dimensions.representation_dimensions_wrapper import RepresentationDimensionsWrapper
+from abstraqt.utils.my_numpy.lift_to_numpy_array import lift_to_numpy_array
 from .abstract_int2_array import AbstractInt2Array
 from .interval_array import _project_to_unit, _if_nan_then_zero, IntervalArray, \
     cos__interval_array_representation, mul__interval_array_representation, ensure_cyclic_interval_start_in_range, \
@@ -94,6 +94,16 @@ class AbstractComplexArray(IntervalArray):
     def exponent_base_i(exponent: AbstractInt2Array):
         # overwritten later on
         pass
+
+    ########
+    # JOIN #
+    ########
+
+    # def join(self, other):
+    #     # this "canonical" transformer would be sound but leads to failing tests (our tests exploit properties which are invalidated by this optimization)
+    #     self = self.to_canonical()
+    #     other = other.to_canonical()
+    #     return IntervalArray.join(self, other)
 
     #############
     # CANONICAL #

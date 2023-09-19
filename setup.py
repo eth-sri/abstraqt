@@ -12,7 +12,7 @@ tests_require = [
     'galois==0.0.14',
     'sh>=1.14',
     'GitPython>=3.1.24',
-    'pyzx==0.7.3'
+    # 'pyzx==0.7.3'
 ]
 setuptools.setup(
     name="abstraqt",

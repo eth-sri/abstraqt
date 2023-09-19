@@ -3,8 +3,8 @@ from typing import Sequence
 import numpy as np
 
 from abstraqt.abstract_interpretation.interfaces.mixins.equal_abstract_object_nan import EqualAbstractObjectNan
-from abstraqt.utils.array.dimensions.representation_dimensions_wrapper import RepresentationDimensionsWrapper
-from abstraqt.utils.numpy.lift_to_numpy_array import lift_to_numpy_array
+from abstraqt.utils.my_array.dimensions.representation_dimensions_wrapper import RepresentationDimensionsWrapper
+from abstraqt.utils.my_numpy.lift_to_numpy_array import lift_to_numpy_array
 from .interfaces import AbstractArray
 
 atol = 1e-8
@@ -149,13 +149,14 @@ class IntervalArray(RepresentationDimensionsWrapper, EqualAbstractObjectNan, Abs
         return is_super_set_of__interval_array_representation(self.representation, other.representation)
 
     def equal_abstract_object(self, other) -> bool:
-        return np.all(np.logical_or(
+        ret = np.all(np.logical_or(
             np.isclose(self.representation, other.representation),
             np.logical_and(
                 np.isnan(self.representation),
                 np.isnan(other.representation)
             )
         ))
+        return bool(ret)
 
     def get_corners_single(self):
         assert self.representation.shape == (2,)

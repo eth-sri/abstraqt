@@ -3,7 +3,7 @@ import numpy as np
 from abstraqt.abstract_interpretation.abstract_bool_array import AbstractBoolArray, solve_mod_2_abstract_rhs
 from abstraqt.abstract_interpretation.interfaces.best_transformers import best_transformer_from_concrete
 from abstraqt.linalg.solve_mod_2 import solve_mod_2
-from abstraqt.utils.array.mod_array import Mod2Array
+from abstraqt.utils.my_array.mod_array import Mod2Array
 from tests.abstraqt.abstract_interpretation.interfaces.abstract_test_abstract_bit_pattern_array import \
     AbstractTestAbstractBitPatternArrayWrapper
 from tests.abstraqt.linalg.random_matrix import get_bool_matrix

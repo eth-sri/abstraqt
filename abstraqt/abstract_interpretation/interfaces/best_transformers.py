@@ -4,7 +4,7 @@ from typing import Tuple
 from cachier import cachier
 
 from abstraqt.utils import logging
-from abstraqt.utils.array.lookup_table import LookupTable
+from abstraqt.utils.my_array.lookup_table import LookupTable
 from abstraqt.utils.cachier_helper import default_cachier_arguments
 from abstraqt.utils.function_renamer import rename_function
 from abstraqt.utils.inspection.function_arguments import count_n_arguments

@@ -8,7 +8,7 @@ from abstraqt.abstract_interpretation import AbstractComplexArray, AbstractBoolA
 from abstraqt.pauli import AbstractPauliBitRepresentation, PauliBitRepresentation
 from abstraqt.stabilizer.abstract_stabilizer_plus import AbstractStabilizerPlus
 from abstraqt.utils.cachier_helper import default_cachier_arguments
-from abstraqt.utils.numpy.my_numpy import random_number_generator
+from abstraqt.utils.my_numpy.my_numpy import random_number_generator
 from tests.abstraqt.abstract_interpretation.interfaces.abstract_test_abstract_bit_pattern_array import \
     random_abstract_bit_pattern_array
 from tests.abstraqt.abstract_interpretation.test_abstract_complex_array import random_abstract_complex_array

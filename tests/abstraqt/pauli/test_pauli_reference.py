@@ -3,7 +3,7 @@ import unittest
 import numpy as np
 
 from abstraqt.linalg.common_matrices import paulis_dict, I, X, Y
-from abstraqt.utils.numpy.pack_bits import pack_bits
+from abstraqt.utils.my_numpy.pack_bits import pack_bits
 from abstraqt.pauli.pauli_bit_representation import commutes_pauli_bit_representation_representation
 from abstraqt.pauli.pauli_reference import to_matrices, stabilizer_matrices_to_densities, decompose_into_pauli_basis, \
     recompose

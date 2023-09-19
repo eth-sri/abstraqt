@@ -5,10 +5,10 @@ import numpy as np
 
 from abstraqt.abstract_interpretation.interfaces import AbstractArray
 from abstraqt.utils import logging
-from abstraqt.utils.array.lookup_table import LookupTable
-from abstraqt.utils.array.mod_array import ModArray
-from abstraqt.utils.numpy.lift_to_numpy_array import lift_to_numpy_array
-from abstraqt.utils.numpy.my_numpy import bitwise_implies, is_bitwise_one, count_one_bits
+from abstraqt.utils.my_array.lookup_table import LookupTable
+from abstraqt.utils.my_array.mod_array import ModArray
+from abstraqt.utils.my_numpy.lift_to_numpy_array import lift_to_numpy_array
+from abstraqt.utils.my_numpy.my_numpy import bitwise_implies, is_bitwise_one, count_one_bits
 
 logger = logging.getLogger(__name__)
 

@@ -13,7 +13,7 @@ from abstraqt.abstract_interpretation.interfaces.best_transformers import add_be
     from_reference_implementation, \
     get_best_transformer_on_representation
 from abstraqt.linalg.common_matrices import get_n_qubits
-from abstraqt.utils.numpy.my_numpy import concatenate_last_axis
+from abstraqt.utils.my_numpy.my_numpy import concatenate_last_axis
 from .pauli_bit_representation import factor_lookup, PauliBitRepresentation, conjugate_letters_list, \
     commutes_representation_generic, get_conjugate_with_op, get_prefactors_aggregated_generic
 from .pauli_reference import pauli_index_to_letter, get_representation

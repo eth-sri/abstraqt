@@ -17,6 +17,8 @@ FAST=${1:-}
 
 echo -e "\nInstalling abstraqt..."
 pip --version
+pip install git+https://github.com/Quantomatic/pyzx@0f8737d
+
 # --upgrade: upgrade all packages to the newest available version
 # --upgrade-strategy=eager: dependencies are upgraded regardless of whether the
 # currently installed version satisfies the requirements

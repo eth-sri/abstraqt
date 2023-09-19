@@ -24,11 +24,11 @@ from abstraqt.pauli.pauli_bit_representation import pauli_mul, get_bare_pauli_co
     select__pauli_bit_representation_representation, get_prefactors_aggregated__pauli_bit_representation_representation
 from abstraqt.pauli.pauli_reference import decompose_into_pauli_basis
 from abstraqt.utils import logging
-from abstraqt.utils.array.dimensions.shaping import pairing
+from abstraqt.utils.my_array.dimensions.shaping import pairing
 from abstraqt.utils.hash_helper import my_numpy_hash
 from abstraqt.utils.iterator_helper import get_unique
-from abstraqt.utils.numpy import matrix_product
-from abstraqt.utils.numpy.my_numpy import map_to_consecutive, ravel_multi_index
+from abstraqt.utils.my_numpy import matrix_product
+from abstraqt.utils.my_numpy.my_numpy import map_to_consecutive, ravel_multi_index
 from abstraqt.utils.string_helper import dict_to_string
 
 logger = logging.getLogger(__name__)

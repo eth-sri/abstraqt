@@ -5,8 +5,8 @@ import numpy as np
 
 from abstraqt.abstract_interpretation.interfaces.abstract_bit_pattern_array import AbstractBitPatternArray
 from abstraqt.abstract_interpretation.interfaces.best_transformers import add_best_transformer_to_class
-from abstraqt.utils.array.lookup_table import LookupTable
-from abstraqt.utils.array.mod_array import Mod4Array
+from abstraqt.utils.my_array.lookup_table import LookupTable
+from abstraqt.utils.my_array.mod_array import Mod4Array
 from .abstract_bool_array import dot_abstract_generic, AbstractBoolArray
 
 

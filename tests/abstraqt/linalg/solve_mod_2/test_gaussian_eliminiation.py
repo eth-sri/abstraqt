@@ -3,7 +3,7 @@ from unittest import TestCase
 import numpy as np
 
 from abstraqt.linalg.solve_mod_2.gaussian_elimination_mod_2 import invert_matrix_mod_2
-from abstraqt.utils.numpy.my_numpy import matmul_mod2
+from abstraqt.utils.my_numpy.my_numpy import matmul_mod2
 from tests.abstraqt.linalg.random_matrix import get_random_bool_matrices
 
 sizes = [(2, 2), (3, 3), (4, 4), (3, 2), (3, 1), (4, 2)]

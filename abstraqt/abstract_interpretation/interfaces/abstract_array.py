@@ -2,10 +2,10 @@ from abc import ABC
 
 import numpy as np
 
-from abstraqt.utils.array.dimensions.representation_wrapper import RepresentationWrapper
-from abstraqt.utils.array.dimensions.shaping import Shaping
-from abstraqt.utils.array.element_wise_str import ElementWiseStr
-from abstraqt.utils.numpy.lift_to_numpy_array import lift_to_numpy_array
+from abstraqt.utils.my_array.dimensions.representation_wrapper import RepresentationWrapper
+from abstraqt.utils.my_array.dimensions.shaping import Shaping
+from abstraqt.utils.my_array.element_wise_str import ElementWiseStr
+from abstraqt.utils.my_numpy.lift_to_numpy_array import lift_to_numpy_array
 from .mixins.abstract_equals import AbstractEquals
 from .mixins.abstract_lift_join import AbstractLiftJoin
 from .mixins.abstract_size import AbstractSize

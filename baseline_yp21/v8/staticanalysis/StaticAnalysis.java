@@ -238,6 +238,9 @@ public class StaticAnalysis {
 			System.out.println("Projected assertion:\n" + projectedSpec);
 		}
 
+    // BEGIN EDIT
+    // Added logic to check if the last qubit is |0>
+
 		// check last qubit
 		int i = p.getSize() - 1;
 		System.out.println("Checking: " + i);
@@ -249,17 +252,6 @@ public class StaticAnalysis {
 		Complex[][] projection = ComplexMatrix.newSquareMatrix(2);
 		projection[value][value] = new Complex(1);
 
-		// // X basis
-		// double diagonal = 0.5;
-		// double offDiagonal = 0.5;
-		// if (value == 1) {
-		// 	offDiagonal = -0.5;
-		// }
-		// projection[0][0] = new Complex(diagonal);
-		// projection[0][1] = new Complex(offDiagonal);
-		// projection[1][0] = new Complex(offDiagonal);
-		// projection[1][1] = new Complex(diagonal);
-
 		InitialValueGenerator m = measureState(domain, projection, i);
 		AbstractState projectedSpec = new AbstractState(domain, m);
 		boolean subset = abstractState.subsetOf(projectedSpec);
@@ -267,12 +259,17 @@ public class StaticAnalysis {
 			System.out.println("Qubit state: Qubit " + i + " has value " + value + " in basis Z");
 		}
 
+    // END EDIT
+
 		if (this.timed) {
 			System.out.println("time spent in gamma:     " + timeSpentInGamma / 1000 + " seconds");
 			System.out.println("time spent in transform: " + timeSpentInTransform / 1000 + " seconds");
 			System.out.println("time spent in alpha:     " + timeSpentInAlpha / 1000 + " seconds");
 		}
 	}
+
+  // BEGIN EDIT
+  // Added function
 
 	private InitialValueGenerator measureState(Domain domain, Complex[][] partialProjection, int qubitIndex) {
 		InitialValueGenerator ret =
@@ -297,6 +294,8 @@ public class StaticAnalysis {
 				};
 		return ret;
 	}
+
+  // END EDIT
 
 	private Complex[] tensormultiplyColCol(Qubit v1, Complex[] v2) {
 		Complex[] result = new Complex[2 * v2.length];

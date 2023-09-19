@@ -3,7 +3,7 @@ from typing import Callable
 import numpy as np
 
 from abstraqt.utils.function_renamer import rename_function
-from abstraqt.utils.numpy.my_numba import my_njit
+from abstraqt.utils.my_numpy.my_numba import my_njit
 
 
 def ensure_b_column(f: Callable[[np.ndarray, np.ndarray], np.ndarray]):

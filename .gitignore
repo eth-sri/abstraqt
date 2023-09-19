@@ -3,4 +3,4 @@
 /**/*.egg-info
 /**/__init__.pyc
 /**/*.csv#
-/.vscode
+/core.*

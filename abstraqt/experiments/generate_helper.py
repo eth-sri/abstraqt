@@ -87,10 +87,10 @@ def random_from_sequence(options: Sequence[int], exclude: List[int]=[]):
     return random.choice(options)
 
 
-def random_operation(circuit: QuantumCircuit, *operations: Tuple[OP, Sequence[List[int]]], repeat: int=1) -> None:
+def random_operation(circuit: QuantumCircuit, *operations: Tuple[OP, Sequence[List[int]]], n_gates: int=1) -> None:
     randoms = QuantumCircuit(circuit.num_qubits)
 
-    for _ in range(repeat):
+    for _ in range(n_gates):
         operation, options_for_qubits = random.choice(operations)
 
         if isinstance(operation, str):
@@ -108,7 +108,7 @@ def random_operation(circuit: QuantumCircuit, *operations: Tuple[OP, Sequence[Li
     return randoms
 
 
-def random_operation_on_qubits(circuit: QuantumCircuit, operation_onlys: List[OP], qubits: Sequence[int], repeat: int=1):
+def random_operation_on_qubits(circuit: QuantumCircuit, operation_onlys: List[OP], qubits: Sequence[int], n_gates: int=1):
     qubits = list(qubits)
 
     operations: List[Tuple[OP, Sequence[List[int]]]] = []
@@ -121,6 +121,4 @@ def random_operation_on_qubits(circuit: QuantumCircuit, operation_onlys: List[OP
 
         operations.append((operation_only, options_for_qubits))
     
-    return random_operation(circuit, *operations, repeat=repeat)
-
-
+    return random_operation(circuit, *operations, n_gates=n_gates)

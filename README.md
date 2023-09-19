@@ -24,7 +24,7 @@ rm -rf QuiZX/quizx && git clone https://github.com/Quantomatic/quizx.git QuiZX/q
 cd baseline_yp21/v8; bash ./clean.sh; javac Main.java; cd -  # build YP21
 ```
 
-This takes multiple hours, as it includes running extensive tests and some
+This takes around half a day, as it includes running extensive tests and some
 pre-computation.
 
 ## Usage
@@ -50,11 +50,12 @@ print(probability_range)
 To reproduce the results from our evaluation of Abstraqt, simply run
 
 ```bash
-time python abstraqt/experiments/run_experiments.py
-python abstraqt/experiments/combine_results.py
+/usr/bin/time -v python abstraqt/experiments/run_experiments.py --max-processes 1
 ```
 
-This takes a few days, as it includes running multiple slow baselines.
+This takes multiple days, even when using 20 processes (see flag above), as it
+includes running multiple slow baselines. Using 20 processes is only an option
+if enough cores (>20) and enough memory (~100GB) is available.
 
 ### Memory Usage
 
@@ -66,8 +67,11 @@ To determine the memory usage of Abstraqt, run:
 
 ### Generate Benchmarks
 
-The benchmark circuits were generated using:
+To regenerate a fresh benchmark from scratch:
 
 ```bash
-python abstraqt/experiments/generate_circuits.py
+# optional: cleanup old benchmarks
+cd abstraqt/experiments/circuits; rm *.qasm *.q *.qc *.csv; git checkout *.qasm *.q *.qc *.csv; cd -; git status
+# generate
+python abstraqt/experiments/generate_circuits.py --repeat 10
 ```

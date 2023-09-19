@@ -1,0 +1,7 @@
+{
+    "files.exclude": {
+        "docker/home": true,
+        "**/__pycache__": true,
+        "**/*.egg-info": true,
+    }
+}

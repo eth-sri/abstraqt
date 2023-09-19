@@ -6,7 +6,7 @@ import numpy as np
 from abstraqt.abstract_interpretation.interfaces.abstract_bit_pattern_array import AbstractBitPatternArray
 from abstraqt.abstract_interpretation.interfaces.best_transformers import add_best_transformer_to_class
 from abstraqt.linalg.solve_mod_2 import get_kernel_mod_2, solve_mod_2
-from abstraqt.utils.array.mod_array import Mod2Array
+from abstraqt.utils.my_array.mod_array import Mod2Array
 
 
 class AbstractBoolArray(AbstractBitPatternArray):

@@ -1,2 +1,6 @@
 /old
 /backup*
+/*.tmp
+/*.ipynb
+
+*_raw.csv

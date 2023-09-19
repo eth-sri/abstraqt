@@ -6,13 +6,13 @@ import numpy as np
 
 from abstraqt.linalg.common_matrices import matrices_all_dict, get_n_qubits
 from abstraqt.linalg.solve_mod_2 import solve_mod_2
-from abstraqt.utils.array.dimensions.representation_wrapper import RepresentationWrapper
-from abstraqt.utils.array.dimensions.shaping import pairing
-from abstraqt.utils.array.lookup_table import LookupTable
+from abstraqt.utils.my_array.dimensions.representation_wrapper import RepresentationWrapper
+from abstraqt.utils.my_array.dimensions.shaping import pairing
+from abstraqt.utils.my_array.lookup_table import LookupTable
 from abstraqt.utils.function_renamer import rename_function
 from abstraqt.utils.inspection.function_arguments import count_n_arguments
 from abstraqt.utils.lift.lift_to_representation import lift_to_representation
-from abstraqt.utils.numpy.my_numpy import concatenate_last_axis
+from abstraqt.utils.my_numpy.my_numpy import concatenate_last_axis
 from abstraqt.pauli.pauli_reference import pauli_index_to_letter, pauli_representation_from_string, to_matrix, get_representation, \
     matrices_commute, conjugate_with_matrix, to_matrices
 

@@ -1,3 +1,5 @@
+import os
+
 from qiskit import QuantumCircuit
 from qiskit.circuit import Gate
 from qiskit.converters import circuit_to_dag
@@ -81,7 +83,7 @@ def yp21_circuit_to_qasm(source_path: str, target_path: str):
                         target_file.write(f'x q[{qubits[1]}];\n')
 
 
-def qasm_circuit_to_yp21(circuit: QuantumCircuit, source_path: str, target_path: str):
+def qasm_circuit_to_yp21(circuit: QuantumCircuit, target_path: str):
     circuit = circuit_to_dag(circuit)
 
     decomposer = DAGDecomposer(
@@ -93,37 +95,41 @@ def qasm_circuit_to_yp21(circuit: QuantumCircuit, source_path: str, target_path:
 
     qubit_indices = get_qubit_indices_from_circuit(circuit)
 
-    with open(target_path, 'w') as target_file:
-        target_file.write(f'circuit: {circuit.num_qubits()} qubits\n')
+    try:
+        with open(target_path, 'w') as target_file:
+            target_file.write(f'circuit: {circuit.num_qubits()} qubits\n')
 
-        for node in topological_op_nodes(circuit):
-            op = node.op
-            if not isinstance(op, Gate):
-                raise ValueError(f'Unexpected operation {op} of type {type(op)}')
-            name = qiskit_to_abstraqt_name(op.name)
-            if name == 'TDG':
-                name = 'D'
+            for node in topological_op_nodes(circuit):
+                op = node.op
+                if not isinstance(op, Gate):
+                    raise ValueError(f'Unexpected operation {op} of type {type(op)}')
+                name = qiskit_to_abstraqt_name(op.name)
+                if name == 'TDG':
+                    name = 'D'
 
-            qubits = get_qubit_indices(qubit_indices, node)
+                qubits = get_qubit_indices(qubit_indices, node)
 
-            swapped = False
-            if name == 'CNOT':
-                if qubits[0] > qubits[1]:
-                    swapped = True
-                    qubits[0], qubits[1] = qubits[1], qubits[0]
+                swapped = False
+                if name == 'CNOT':
+                    if qubits[0] > qubits[1]:
+                        swapped = True
+                        qubits[0], qubits[1] = qubits[1], qubits[0]
+                        target_file.write(f'H({qubits[0]})\nH({qubits[1]})\n')
+
+                qubits_str = ','.join([str(q) for q in qubits])
+                if name == 'SDG':
+                    target_file.write(f'S({qubits_str})\n')
+                    target_file.write(f'Z({qubits_str})\n')
+                else:
+                    target_file.write(f'{name}({qubits_str})\n')
+                
+                if swapped:
                     target_file.write(f'H({qubits[0]})\nH({qubits[1]})\n')
 
-            qubits_str = ','.join([str(q) for q in qubits])
-            if name == 'SDG':
-                target_file.write(f'S({qubits_str})\n')
-                target_file.write(f'Z({qubits_str})\n')
-            else:
-                target_file.write(f'{name}({qubits_str})\n')
-            
-            if swapped:
-                target_file.write(f'H({qubits[0]})\nH({qubits[1]})\n')
-
-        n_qubits = circuit.num_qubits()
-        zeros = ''.join(['0' for _ in range(n_qubits)])
-        target_file.write('assert state in span { |' + str(zeros) + '>, |' + str(zeros) + '> }\n')
-        target_file.write(f'measure 0..{n_qubits}\n')
+            n_qubits = circuit.num_qubits()
+            zeros = ''.join(['0' for _ in range(n_qubits)])
+            target_file.write('assert state in span { |' + str(zeros) + '>, |' + str(zeros) + '> }\n')
+            target_file.write(f'measure 0..{n_qubits}\n')
+    except ValueError:
+        os.remove(target_path)
+        raise

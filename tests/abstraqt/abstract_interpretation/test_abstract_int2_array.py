@@ -1,5 +1,5 @@
 from abstraqt.abstract_interpretation.abstract_int2_array import AbstractInt2Array
-from abstraqt.utils.array.mod_array import Mod4Array
+from abstraqt.utils.my_array.mod_array import Mod4Array
 from tests.abstraqt.abstract_interpretation.interfaces.abstract_test_abstract_bit_pattern_array import \
     AbstractTestAbstractBitPatternArrayWrapper
 

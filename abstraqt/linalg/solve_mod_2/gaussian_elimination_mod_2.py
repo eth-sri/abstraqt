@@ -2,8 +2,8 @@ import numpy as np
 
 from abstraqt.linalg.solve_mod_2.solve_helper import solve_via_gaussian_elimination, \
     kernel_via_gaussian_elimination
-from abstraqt.utils.numpy.my_numba import my_njit, outer_with_and
-from abstraqt.utils.numpy.pack_bits import unpack_bits, pack_bits
+from abstraqt.utils.my_numpy.my_numba import my_njit, outer_with_and
+from abstraqt.utils.my_numpy.pack_bits import unpack_bits, pack_bits
 
 
 @my_njit
